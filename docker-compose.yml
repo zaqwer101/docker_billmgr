@@ -18,7 +18,6 @@ services:
       static-network:
         ipv4_address: 172.30.20.101
     
-
   billmgr-service:
     build: ./billmgr
     hostname: billmgr.docker
