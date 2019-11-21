@@ -27,6 +27,8 @@ services:
       - 1500:1500
     depends_on:
       - mysql-service
+    environment:
+      BILLMGR_PASSWORD: 944sn3O8d92s
     networks:
       static-network:
         ipv4_address: 172.30.20.100
