@@ -12,8 +12,6 @@ services:
       MYSQL_PASSWORD: 944sn3O8d92s
     volumes:
       - ./db:/var/lib/mysql
-    ports:
-      - 3306:3306
     networks:
       static-network:
         ipv4_address: 172.30.20.101
