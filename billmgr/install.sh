@@ -31,6 +31,6 @@ fi
 
 cat /usr/local/mgr5/etc/ihttpd.conf
 /usr/local/mgr5/sbin/mgrctl -m billmgr session.newkey key=sdkfmnsdbf6dt8s7yf98udsiofjsdh
-/usr/local/mgr5/sbin/mgrctl -m billmgr employee.edit elid=1 password=$BILLMGR_PASSWORD confirm=$BILLMGR_PASSWORD
+/usr/local/mgr5/sbin/mgrctl -m billmgr employee.edit elid=1 password=$BILLMGR_PASSWORD confirm=$BILLMGR_PASSWORD sok=ok
 killall -9 ihttpd 
 /usr/local/mgr5/sbin/ihttpd -d 
