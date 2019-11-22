@@ -2,7 +2,7 @@
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
 echo $MYSQL_SERVER_IP 
 echo "Начинаем.."
-if [ ! -f /root/.installed ]; then
+if [ ! -f /usr/local/mgr5/.installed ]; then
     echo "Панель не установлена"
     mkdir -p /usr/local/mgr5/etc/billmgr.conf.d
     echo -e "DBHost 172.30.20.101 \n\
@@ -24,7 +24,7 @@ ip * \n \
 port 1500 \n \
 redirect }" > /usr/local/mgr5/etc/ihttpd.conf
     yum install -y billmanager-corporate
-    touch /root/.installed
+    touch /usr/local/mgr5/.installed
 else
     echo "Панель уже установлена"
 fi
