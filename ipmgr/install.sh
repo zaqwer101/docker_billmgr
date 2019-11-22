@@ -10,10 +10,12 @@ if [ ! -f /usr/local/mgr5/.ipmgr_installed ]; then
     yum install ipmanager ipmanager-common ipmanager-bind -y
     touch /usr/local/mgr5/.ipmgr_installed
     sleep 2
-    /usr/local/mgr5/sbin/mgrctl -m ipmgr user.edit name=bill password=$IPMGR_PASSWORD confirm=$IPMGR_PASSWORD sok=ok
 else
     echo "Панель уже установлена"
 fi
+echo $IPMGR_PASSWORD
+/usr/local/mgr5/sbin/mgrctl -m ipmgr user.edit name=bill passwd=$IPMGR_PASSWORD confirm=$IPMGR_PASSWORD sok=ok
+
 
 for ((;;))
 do
