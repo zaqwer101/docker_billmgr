@@ -14,8 +14,8 @@ else
     echo "Панель уже установлена"
 fi
 echo $IPMGR_PASSWORD
-/usr/local/mgr5/sbin/mgrctl -m ipmgr user.edit name=bill passwd=$IPMGR_PASSWORD confirm=$IPMGR_PASSWORD sok=ok
 
+/usr/local/mgr5/sbin/mgrctl -m ipmgr user.edit name=bill passwd=$IPMGR_PASSWORD confirm=$IPMGR_PASSWORD sok=ok
 
 for ((;;))
 do

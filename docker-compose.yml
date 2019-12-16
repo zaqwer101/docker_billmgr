@@ -18,11 +18,12 @@ services:
 
   billmgr-service:
     build: ./billmgr
-    hostname: billmgr.docker
+    hostname: billmanager.docker
     volumes:
       - ./mgrdata/mgr5:/usr/local/mgr5
     ports:
       - 1500:1500
+      - 443:443
     depends_on:
       - mysql-service
     environment:
@@ -31,20 +32,20 @@ services:
       static-network:
         ipv4_address: 172.30.20.100
 
-  ipmgr-service:
-    build: ./ipmgr
-    hostname: ipmgr.docker
-    volumes:
-      - ./mgrdata/mgr5:/usr/local/mgr5
-    environment:
-      IPMGR_PASSWORD: 944sn3O8d92s
-    ports:
-      - 1501:1500
-    networks:
-      static-network:
-        ipv4_address: 172.30.20.102
-    depends_on:
-      - billmgr-service
+  # ipmgr-service:
+  #   build: ./ipmgr
+  #   hostname: ipmgr.docker
+  #   volumes:
+  #     - ./mgrdata/mgr5:/usr/local/mgr5
+  #   environment:
+  #     IPMGR_PASSWORD: 944sn3O8d92s
+  #   ports:
+  #     - 1501:1500
+  #   networks:
+  #     static-network:
+  #       ipv4_address: 172.30.20.102
+  #   depends_on:
+  #     - billmgr-service
 
 networks:
   static-network:
