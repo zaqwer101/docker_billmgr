@@ -18,7 +18,7 @@ DBName billmgr\n\n\
 Option EULA\n" > /usr/local/mgr5/etc/billmgr.conf
     yum install -y coremanager
     yum install -y billmanager-corporate
-
+    yum install -y billmanager-plugin-pmwire
     cp -rf /billmanager.docker.crt /usr/local/mgr5/etc/manager.crt
     cp -rf /device.key /usr/local/mgr5/etc/manager.key
     cp -rf /ihttpd.conf /usr/local/mgr5/etc/ihttpd.conf
@@ -31,9 +31,10 @@ fi
 cat /usr/local/mgr5/etc/ihttpd.conf
 echo -e "\n\n---------------------------\n\n"
 killall -9 ihttpd 
-# sleep 10
 /usr/local/mgr5/sbin/mgrctl -m billmgr employee.edit elid=1 password=$BILLMGR_PASSWORD confirm=$BILLMGR_PASSWORD sok=ok
-/usr/local/mgr5/sbin/ihttpd 
+/usr/local/mgr5/sbin/ihttpd
+sleep 60 
+sh /billmanager_init.sh
 for ((;;))
 do
     sleep 10

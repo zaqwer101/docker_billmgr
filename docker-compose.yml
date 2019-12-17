@@ -21,6 +21,7 @@ services:
     hostname: billmanager.docker
     volumes:
       - ./mgrdata/mgr5:/usr/local/mgr5
+      - ./cache:/var/cache/yum
     ports:
       - 1500:1500
       - 443:443
