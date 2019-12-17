@@ -14,12 +14,13 @@ DBName billmgr" > /usr/local/mgr5/etc/billmgr.conf.d/db.conf
     echo -e "DBHost 172.30.20.101\n\
 DBUser billmgr\n\
 DBPassword 944sn3O8d92s\n\
-DBName billmgr\n" > /usr/local/mgr5/etc/billmgr.conf
+DBName billmgr\n\n\
+Option EULA\n" > /usr/local/mgr5/etc/billmgr.conf
     yum install -y coremanager
     yum install -y billmanager-corporate
 
-    cp -rf /billmanager.crt /usr/local/mgr5/etc/billmanager.crt
-    cp -rf /billmanager.key /usr/local/mgr5/etc/billmanager.key
+    cp -rf /billmanager.docker.crt /usr/local/mgr5/etc/manager.crt
+    cp -rf /device.key /usr/local/mgr5/etc/manager.key
     cp -rf /ihttpd.conf /usr/local/mgr5/etc/ihttpd.conf
     killall -9 ihttpd
     touch /usr/local/mgr5/.billmgr_installed
@@ -31,7 +32,7 @@ cat /usr/local/mgr5/etc/ihttpd.conf
 echo -e "\n\n---------------------------\n\n"
 killall -9 ihttpd 
 # sleep 10
-# /usr/local/mgr5/sbin/mgrctl -m billmgr employee.edit elid=1 password=$BILLMGR_PASSWORD confirm=$BILLMGR_PASSWORD sok=ok
+/usr/local/mgr5/sbin/mgrctl -m billmgr employee.edit elid=1 password=$BILLMGR_PASSWORD confirm=$BILLMGR_PASSWORD sok=ok
 /usr/local/mgr5/sbin/ihttpd 
 for ((;;))
 do
