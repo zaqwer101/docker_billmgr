@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Начальные настройки!"
 # Начальные настройки
 /usr/local/mgr5/sbin/mgrctl -m billmgr initialsettings.company clicked_button=finish country=182 country_legal=182 country_physical=182 currency=126 doctmpl_envelope=5 doctmpl_invoice=9 doctmpl_payment=4 doctmpl_reconciliation=14 fax_country=182 language=ru locale=3 name="Boss Of The Gym Inc." nextnum_invoice= nextnum_payment= numtmpl_invoice= numtmpl_payment= ogrn= operafake=1576609367306 payment_description= phone="+7 (___) ___-__-__" fax="+7 (___) ___-__-__" phone_country=182 profiletype=2 project_billurl=https://billmanager.docker/billmgr project_name=Gym  project_notifyemail=notify@billmanager.docker project_supportemail=support@billmanager.docker sendcostcurrency=126 sok=ok state_physical=null
 

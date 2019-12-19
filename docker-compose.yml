@@ -33,6 +33,16 @@ services:
       static-network:
         ipv4_address: 172.30.20.100
 
+  website-service:
+    image: 'nginx'
+    volumes:
+      - ./website:/usr/share/nginx/html
+    ports:
+      - 80:80
+    networks:
+      static-network:
+        ipv4_address: 172.30.20.103
+
   # ipmgr-service:
   #   build: ./ipmgr
   #   hostname: ipmgr.docker
