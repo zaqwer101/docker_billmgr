@@ -2,7 +2,7 @@
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
 echo $MYSQL_SERVER_IP 
 echo "Начинаем.."
-
+echo $KEY
 echo `ls /`
 if [ ! -f /usr/local/mgr5/.billmgr_installed ]; then
     echo "Панель BILLmanager не установлена"
@@ -29,7 +29,6 @@ Option EULA\n" > /usr/local/mgr5/etc/billmgr.conf
     cp -rf /device.key /usr/local/mgr5/etc/manager.key
     cp -rf /ihttpd.conf /usr/local/mgr5/etc/ihttpd.conf
     killall -9 ihttpd
-    sleep 60
     /usr/local/mgr5/sbin/licctl fetch billmgr $KEY
     sleep 60
     echo "Начинаем конфигурирование..."
